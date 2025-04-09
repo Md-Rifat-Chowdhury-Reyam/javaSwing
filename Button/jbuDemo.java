@@ -12,7 +12,7 @@ import java.awt.*;
 
 public class jbuDemo implements ActionListener{
 
-    JLabel lb;
+    JLabel lb, lb1;
 
     public jbuDemo()
     {
@@ -34,15 +34,28 @@ public class jbuDemo implements ActionListener{
         frame.add(lb);
 
 
+        ImageIcon im2 = new ImageIcon("C:/Users/PC/Downloads/HC.png");
+        JButton bu2 = new JButton(im2);
+        bu2.setActionCommand("Image2");
+        bu2.addActionListener(this);
+        frame.add(bu2);
+
+        lb1 = new JLabel("this is im1");
+        frame.add(lb1);
+
+
 
     }
 
 
     public void actionPerformed(ActionEvent e) 
     {
-        lb.setText("You clicked on this " + e.getActionCommand());
-    }        
-
+        if ("Image1".equals(e.getActionCommand())) {
+            lb.setText("You clicked on this " + e.getActionCommand());
+        } else if ("Image2".equals(e.getActionCommand())) {
+            lb1.setText("You clicked on this " + e.getActionCommand());
+        }
+    }  
 
 
 
